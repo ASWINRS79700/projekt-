@@ -6,10 +6,13 @@
       <list>
         <option value="$PROJECT_DIR$/movie-service/pom.xml" />
         <option value="$PROJECT_DIR$/customer-service/pom.xml" />
+        <option value="$PROJECT_DIR$/review-service/pom.xml" />
+        <option value="$PROJECT_DIR$/discovery-service/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager">
+  <component name="ProjectRootManager" version="2" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ProjectType">
