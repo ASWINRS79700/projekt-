@@ -1,0 +1,25 @@
+debug: false
+server:
+  port: 9100
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: customer-service
+          uri: lb://customer-service
+          predicates:
+            - Path=/api/v1/customers**
+            - Method=GET,POST
+#        - id: movie-service
+#          uri: lb://movie-service
+#          predicates:
+#            - Path=/api/v1/movies**
+#            - Method=GET,POST
