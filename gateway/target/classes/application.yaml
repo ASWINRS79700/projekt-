@@ -13,13 +13,13 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: customer-service
-          uri: lb://customer-service
+        - id: review-service
+          uri: lb://review-service
           predicates:
-            - Path=/api/v1/customers**
+            - Path=/api/v1/reviews/**
             - Method=GET,POST
-#        - id: movie-service
-#          uri: lb://movie-service
-#          predicates:
-#            - Path=/api/v1/movies**
-#            - Method=GET,POST
+        - id: item-service
+          uri: lb://item-service
+          predicates:
+            - Path=/api/v1/items/**
+            - Method=GET,POST
