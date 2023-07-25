@@ -8,8 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
-public class OrderServiceImpl implements OrderService{
+public class OrderServiceImpl implements OrderService {
 
 
     @Autowired
@@ -28,25 +29,24 @@ public class OrderServiceImpl implements OrderService{
     }
 
     @Override
-    public Order getByOrderId(int orderId){
-        var order=orderRepository.findById(orderId);
-        if(order.isPresent()){
+    public Order getByOrderId(int orderId) {
+        var order = orderRepository.findById(orderId);
+        if (order.isPresent()) {
 
             return order.get();
-        }
-        else{
-            throw new OrderNotFoundExceprtion("Order not found: "+orderId);
+        } else {
+            throw new OrderNotFoundExceprtion("Order not found: " + orderId);
         }
     }
 
-//    @Override
-//    public List<Order> getAllByUserId(int userId) {
-//        return orderRepository.getAllByUserId(userId);
-//    }
+    @Override
+    public List<Order> getAllByUserId(int userId) {
+        return orderRepository.getAllByUserId(userId);
+    }
 
     @Override
     public Order deleteById(int orderId) {
-        var order=orderRepository.findById(orderId);
+        var order = orderRepository.findById(orderId);
         orderRepository.deleteById(orderId);
         return order.get();
     }

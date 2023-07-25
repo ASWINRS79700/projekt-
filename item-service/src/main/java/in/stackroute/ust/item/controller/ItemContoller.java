@@ -49,7 +49,7 @@ public class ItemContoller {
         return ResponseEntity.status(HttpStatus.OK).body(remaining);
     }
     @GetMapping("/{id}")
-    public  ResponseEntity<?> getById(@PathVariable int id){
+    public  ResponseEntity<ItemDto> getById(@PathVariable int id){
         return ResponseEntity.status(HttpStatus.FOUND).body(createDto(itemService.getById(id)));
     }
     @GetMapping("/description/{description}")

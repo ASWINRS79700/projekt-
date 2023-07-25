@@ -1,7 +1,6 @@
 package in.stackroute.ust.item.exception.advice;
 
 
-
 import in.stackroute.ust.item.exception.ItemAlreadyExistException;
 import in.stackroute.ust.item.exception.ItemNotFoundException;
 import in.stackroute.ust.item.exception.dto.ApiError;
@@ -74,10 +73,12 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
     protected ResponseEntity<Object> handleItemNotFoundExceptionException(ItemNotFoundException ex) {
         return buildResponseEntity(new ApiError(HttpStatus.NOT_FOUND, ex));
     }
+
     @ExceptionHandler(ItemAlreadyExistException.class)
     protected ResponseEntity<Object> handleItemAlreadyExistException(ItemAlreadyExistException ex) {
         return buildResponseEntity(new ApiError(HttpStatus.NOT_FOUND, ex));
     }
+
 
     @ExceptionHandler(DataIntegrityViolationException.class)
     protected ResponseEntity<Object> handleDataIntegrityViolation(DataIntegrityViolationException ex,

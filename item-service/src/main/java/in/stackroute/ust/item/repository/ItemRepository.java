@@ -8,8 +8,6 @@ import java.util.Optional;
 
 public interface ItemRepository extends JpaRepository<Item, Integer> {
     Optional<Item> getItemByDescription(String description);
-
     List<Item> findByItemIdIn(List<Integer> itemIds);
-
 
 }

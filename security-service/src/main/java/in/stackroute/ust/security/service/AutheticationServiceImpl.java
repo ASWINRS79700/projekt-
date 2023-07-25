@@ -51,4 +51,9 @@ public class AutheticationServiceImpl implements AuthenticationService {
                         .map(GrantedAuthority::getAuthority).collect(Collectors.joining(""));
         return new AuthenticationResponse(jwtService.generateToken(Map.of("roles", authorities),user),user);
     }
+
+    @Override
+    public String getNameById(int id) {
+        return userRepository.findById(id).get().getFirstName();
+    }
 }

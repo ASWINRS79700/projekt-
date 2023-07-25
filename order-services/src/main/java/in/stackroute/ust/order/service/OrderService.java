@@ -9,7 +9,7 @@ public interface OrderService {
     Order save(Order orderDto);
     List<Order> getAll();
     Order getByOrderId(int orderId);
-//    List<Order> getAllByUserId(int userId);
+    List<Order> getAllByUserId(int userId);
     Order deleteById(int orderId);
     Order update(Order order);
 
